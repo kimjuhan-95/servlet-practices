@@ -6,6 +6,5 @@
   <packaging>pom</packaging>
   <name>servlet-practices</name>
   <modules>
-  	<module>helloweb</module>
   </modules>
 </project>
