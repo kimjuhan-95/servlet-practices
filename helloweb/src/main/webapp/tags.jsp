@@ -42,13 +42,7 @@
 	<a href="/helloweb?id=kickscar&name=루피">hello 가자!!</a>
 	<br> 
 	<a href="form.jsp">form으로 가자!!</a> 
+
 	
-</body>
-</html>
-	</table>
-	
-	<img src="/helloweb/images/luppy.png">
-	<img src="./images/luppy.png">
-	<img src="./images/luppy.png"> style="width:100px; border:1px 
 </body>
 </html>

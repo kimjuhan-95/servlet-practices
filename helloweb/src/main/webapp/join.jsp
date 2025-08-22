@@ -3,6 +3,9 @@
 	String email = request.getParameter("email");
 	String password = request.getParameter("password");
 	String year = request.getParameter("year");
+	String gender = request.getParameter("gender");
+	String profile = request.getParameter("profile");
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -13,10 +16,17 @@
 <body>
 	<%=email %>
 	<br>
+	
 	<%=password %>
 	<br>
+	
 	<%=year %>
 	<br>
 	
+	<%=gender %>
+	<br>
+	
+	<%=profile %>
+	<br>
 </body>
 </html>
