@@ -5,6 +5,7 @@
 	String year = request.getParameter("year");
 	String gender = request.getParameter("gender");
 	String profile = request.getParameter("profile");
+	String[] hobbies = request.getParameterValues("hobby");
 	
 %>
 <!DOCTYPE html>
@@ -26,7 +27,20 @@
 	<%=gender %>
 	<br>
 	
+	<pre>
 	<%=profile %>
+	</pre>
+	
+		<ul>
+			<% 
+				for(String hobby : hobbies) {
+			%>		
+			        <li><%=hobby  %></li>
+			<% 
+				}
+			%>
+		</ul>
+	
 	<br>
 </body>
 </html>
