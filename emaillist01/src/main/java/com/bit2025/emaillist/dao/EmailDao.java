@@ -12,14 +12,14 @@ import com.bit2025.emaillist.vo.EmailVo;
 
 public class EmailDao {
 	
-	public int deleteByEmail(String email) {
+	public int deleteByID(Long id) {
 		int result = 0;
 		
 		try (
 			Connection con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement("delete from email where email = ?");
 		) {
-			pstmt.setString(1, email);
+			pstmt.setLong(1, id);
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			 System.out.println("error:" + e);
