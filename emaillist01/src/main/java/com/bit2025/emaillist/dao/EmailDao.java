@@ -11,15 +11,31 @@ import java.util.List;
 import com.bit2025.emaillist.vo.EmailVo;
 
 public class EmailDao {
+
+	public int deleteById(Long id) {
+		int result = 0;
+		
+		try (
+			Connection con = getConnection();
+			PreparedStatement pstmt = con.prepareStatement("delete from email where id = ?");
+		) {
+			pstmt.setLong(1, id);
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			 System.out.println("error:" + e);
+		}
+		
+		return result;		
+	}
 	
-	public int deleteByID(Long id) {
+	public int deleteByEmail(String email) {
 		int result = 0;
 		
 		try (
 			Connection con = getConnection();
 			PreparedStatement pstmt = con.prepareStatement("delete from email where email = ?");
 		) {
-			pstmt.setLong(1, id);
+			pstmt.setString(1, email);
 			result = pstmt.executeUpdate();
 		} catch (SQLException e) {
 			 System.out.println("error:" + e);
@@ -120,7 +136,7 @@ public class EmailDao {
 		try {
 			Class.forName("org.mariadb.jdbc.Driver");
 			
-			String url  = "jdbc:mariadb://192.168.0.177:3306/webdb";
+			String url  = "jdbc:mariadb://192.168.0.182:3306/webdb";
 			con =  DriverManager.getConnection (url, "webdb", "webdb");
 		} catch(ClassNotFoundException ex) {
 			System.out.println("Driver Class Not Found");

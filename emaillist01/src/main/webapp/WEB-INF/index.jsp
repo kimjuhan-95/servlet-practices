@@ -1,4 +1,4 @@
-﻿<%@ page import="com.bit2025.emaillist.dao.EmailDao"%>
+﻿﻿<%@ page import="com.bit2025.emaillist.dao.EmailDao"%>
 <%@ page import="com.bit2025.emaillist.vo.EmailVo"%>
 <%@ page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -30,9 +30,10 @@
 				<td><%=vo.getEmail() %></td>
 			</tr>
 			<tr>
-			     <td colspan="2" 삭제>
-			     <a href="/emaillist01/delete.jsp?id=<%vo.getId %>
-			     <td></td>
+				<td colspan="2">
+					<a href="/emaillist01/delete.jsp?id=<%=vo.getId() %>">삭제</a>
+				</td>
+			</tr>
 		</table>
 		<br>
 	<%
